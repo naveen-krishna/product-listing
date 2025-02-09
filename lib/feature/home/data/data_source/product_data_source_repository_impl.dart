@@ -13,6 +13,7 @@ class ProductDataSourceRepositoryImpl extends ProductDataSourceRepository {
   Future<List<ProductModel>> getProductList(
       {required NoParamsModel params}) async {
     final response = await networkRepository.getRequest(urlSuffix: productList);
+
     return productModelFromJson(response.body);
   }
 }
